@@ -35,7 +35,7 @@ class IsBooked
     #in addition, if end of session booked falls within a time tutor is booked, return false
     #return true if length of bookings_array >= 1 else return false
     def checkIfBooked
-        booking_start_time = Time.parse(get_booking["date"])
+        booking_start_time = Time.parse(get_booking["date"].to_s)
         hours_booked = get_booking["hours_booked"].to_i
         booking_stop_time = booking_start_time + (3600 * hours_booked)
         dates_booked = get_tutor["dates_booked"]
