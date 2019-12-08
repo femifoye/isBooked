@@ -42,7 +42,7 @@ class IsBooked
         lesson_block = 14400
         bookings_array = []
         dates_booked.each do |date|
-            start_time = Time.parse(date["date"])
+            start_time = Time.parse(date["date"].to_s)
             stop_time = start_time + lesson_block
             if(booking_start_time >= start_time && booking_start_time <= stop_time)
                 bookings_array.push(date)
